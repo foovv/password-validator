@@ -36,9 +36,6 @@ html {
   &__form {
     font-size: 1.6em;
 
-    &-infopasswd {
-      display: none;
-    }
     &-text {
       display: flex;
       align-items: center;
@@ -69,4 +66,8 @@ button {
   width: 75px;
   height: 35px;
   border-radius: 5px;
+}
+
+.show {
+  display: none;
 }

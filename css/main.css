@@ -35,9 +35,6 @@ html {
 .box__form {
   font-size: 1.6em;
 }
-.box__form-infopasswd {
-  display: none;
-}
 .box__form-text {
   display: flex;
   align-items: center;
@@ -63,4 +60,8 @@ button {
   width: 75px;
   height: 35px;
   border-radius: 5px;
+}
+
+.show {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
