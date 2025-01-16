@@ -14,20 +14,20 @@ const checkPassword = () => {
   const passwordValue = password.value
   p.textContent = ''
 
-  if (lowPasswd.test(passwordValue) || passwordValue.lenght < 1) {
-    p.classList.remove('show')
+  if (lowPasswd.test(passwordValue) || passwordValue.length < 1) {
+    p.classList.add('show')
     p.style.color = 'red'
     p.textContent = 'słabe hasło'
   } else if (mediumPasswd.test(passwordValue)) {
-    p.classList.remove('show')
+    p.classList.add('show')
     p.style.color = 'yellow'
     p.textContent = 'średnie hasło'
   } else if (goodPasswd.test(passwordValue)) {
-    p.classList.remove('show')
+    p.classList.add('show')
     p.style.color = 'green'
     p.textContent = 'dobre hasło'
   } else {
-    p.classList.remove('show')
+    p.classList.add('show')
     p.style.color = 'red'
     p.textContent = 'podaj prawidłowe wartości!'
   }
