@@ -4,17 +4,17 @@ const p = document.querySelector('.box__form-infopasswd')
 const btn = document.querySelector('button')
 
 // Wyrażenia regularne
-const lowPasswd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ // 8+ znaków, 1 litera, 1 cyfra
+const lowPasswd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,9}$/ // 8+ znaków, 1 litera, 1 cyfra
 const mediumPasswd =
-  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,}$/ // 10+ znaków, 1 litera, 1 cyfra, 1 znak specjalny
+  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,15}$/ // 10+ znaków, 1 litera, 1 cyfra, 1 znak specjalny
 const goodPasswd =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,}$/ // 16+ znaków, 1 wielka litera, 1 cyfra, 1 znak specjalny
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,25}$/ // 16+ znaków, 1 wielka litera, 1 cyfra, 1 znak specjalny
 
 const checkPassword = () => {
   const passwordValue = password.value
   p.textContent = ''
 
-  if (lowPasswd.test(passwordValue) && passwordValue.lenght < 1) {
+  if (lowPasswd.test(passwordValue) || passwordValue.lenght < 1) {
     p.classList.remove('show')
     p.style.color = 'red'
     p.textContent = 'słabe hasło'
