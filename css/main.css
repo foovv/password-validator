@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 500px;
+  height: 350px;
+  border: 1px black solid;
+  border-radius: 10%;
+}
+.box__text {
+  padding: 2em;
+}
+.box__form {
+  font-size: 1.6em;
+}
+.box__form-infopasswd {
+  display: none;
+}
+.box__form-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.box__form-label {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 0.3em;
+}
+.box__form-input {
+  margin: 0.3em 0;
+  width: 100%;
+}
+.box__form-underline {
+  height: 1px;
+  width: 30%;
+  background-color: rgb(75, 126, 109);
+}
+
+button {
+  width: 75px;
+  height: 35px;
+  border-radius: 5px;
+}/*# sourceMappingURL=main.css.map */
