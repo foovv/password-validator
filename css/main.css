@@ -8,6 +8,7 @@
 
 body {
   font-family: "Montserrat", serif;
+  overflow: hidden;
 }
 
 html {
@@ -23,17 +24,26 @@ html {
   height: 100vh;
 }
 
+h1 {
+  text-transform: uppercase;
+}
+
 .box {
-  width: 500px;
-  height: 350px;
+  width: 350px;
+  height: 400px;
   border: 1px black solid;
-  border-radius: 10%;
+  border-radius: 2%;
 }
 .box__text {
   padding: 2em;
 }
 .box__form {
   font-size: 1.6em;
+}
+.box__form-btn {
+  width: 75px;
+  height: 35px;
+  border-radius: 5px;
 }
 .box__form-text {
   display: flex;
@@ -51,15 +61,22 @@ html {
   width: 100%;
 }
 .box__form-underline {
+  position: relative;
+  margin-left: 1.2em;
   height: 1px;
   width: 30%;
-  background-color: rgb(75, 126, 109);
+  background-color: rgb(32, 54, 47);
 }
-
-button {
-  width: 75px;
-  height: 35px;
-  border-radius: 5px;
+.box__form-underline--password {
+  width: 48%;
+}
+.box__form-infopasswd {
+  padding: 0.1em;
+}
+.box__form-icon {
+  display: inline-block;
+  align-items: center;
+  gap: 5px;
 }
 
 .show {

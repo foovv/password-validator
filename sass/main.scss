@@ -8,6 +8,7 @@
 
 body {
   font-family: "Montserrat", serif;
+  overflow: hidden;
 }
 
 html {
@@ -23,11 +24,14 @@ html {
   height: 100vh;
 }
 
+h1 {
+  text-transform: uppercase;
+}
 .box {
-  width: 500px;
-  height: 350px;
+  width: 350px;
+  height: 400px;
   border: 1px black solid;
-  border-radius: 10%;
+  border-radius: 2%;
 
   &__text {
     padding: 2em;
@@ -35,6 +39,12 @@ html {
 
   &__form {
     font-size: 1.6em;
+
+    &-btn {
+      width: 75px;
+      height: 35px;
+      border-radius: 5px;
+    }
 
     &-text {
       display: flex;
@@ -55,17 +65,27 @@ html {
     }
 
     &-underline {
+      position: relative;
+      margin-left: 1.2em;
       height: 1px;
       width: 30%;
-      background-color: rgb(75, 126, 109);
+      background-color: rgb(32, 54, 47);
+
+      &--password {
+        width: 48%;
+      }
+    }
+
+    &-infopasswd {
+      padding: 0.1em;
+    }
+
+    &-icon {
+      display: inline-block;
+      align-items: center;
+      gap: 5px;
     }
   }
-}
-
-button {
-  width: 75px;
-  height: 35px;
-  border-radius: 5px;
 }
 
 .show {

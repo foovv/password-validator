@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IN:wght@100..400&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/0af599df42.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -23,11 +27,13 @@
           <p class="box__form-infopasswd"></p>
           <form class="box__form-text">
             <label class="box__form-label">
-              Email:
-              <div class="box__form-underline"></div>
+              <span class="box__form-icon">
+                <i class="fa-solid fa-envelope"></i>
+                Email:
+                <div class="box__form-underline"></div>
+              </span>
               <input
                 type="text"
-                name=""
                 id="email"
                 placeholder="example@gmail.com"
                 class="box__form-input"
@@ -35,18 +41,21 @@
               />
             </label>
             <label class="box__form-label">
-              Password:
-              <div class="box__form-underline"></div>
+              <span class="box__form-icon">
+                <i class="fa-solid fa-lock"></i>
+                Password:
+                <div
+                  class="box__form-underline box__form-underline--password"
+                ></div>
+              </span>
               <input
                 type="password"
-                name=""
                 id="password"
-                placeholder=""
                 class="box__form-input"
                 maxlength="25"
               />
             </label>
-            <button type="submit">Submit</button>
+            <button class="box__form-btn" type="submit">Submit</button>
           </form>
         </div>
       </div>
