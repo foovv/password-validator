@@ -29,30 +29,34 @@
             <label class="box__form-label">
               <span class="box__form-icon">
                 <i class="fa-solid fa-envelope"></i>
-                Email:
+                <label for="email">Email:</label>
                 <div class="box__form-underline"></div>
               </span>
               <input
+                name="email"
                 type="text"
                 id="email"
                 placeholder="example@gmail.com"
                 class="box__form-input"
                 maxlength="35"
+                required
               />
             </label>
             <label class="box__form-label">
               <span class="box__form-icon">
                 <i class="fa-solid fa-lock"></i>
-                Password:
+                <label for="password">Password:</label>
                 <div
                   class="box__form-underline box__form-underline--password"
                 ></div>
               </span>
               <input
+                name="password"
                 type="password"
                 id="password"
                 class="box__form-input"
-                maxlength="25"
+                maxlength="26"
+                required
               />
             </label>
             <button class="box__form-btn" type="submit">Submit</button>
