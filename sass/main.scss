@@ -29,12 +29,12 @@ h1 {
 }
 .box {
   width: 350px;
-  height: 400px;
+  height: 250px;
   border: 1px black solid;
   border-radius: 2%;
 
   &__text {
-    padding: 2em;
+    padding: 1em;
   }
 
   &__form {
