@@ -21,7 +21,7 @@
     <div class="container">
       <div class="box">
         <div class="box__items">
-          <h1 class="box__text">zarejestruj się</h1>
+          <h1 class="box__text">Sign up</h1>
         </div>
         <div class="box__form">
           <p class="box__form-infopasswd"></p>
@@ -38,8 +38,6 @@
                 id="email"
                 placeholder="example@gmail.com"
                 class="box__form-input"
-                maxlength="35"
-                required
               />
             </label>
             <label class="box__form-label">
@@ -55,11 +53,26 @@
                 type="password"
                 id="password"
                 class="box__form-input"
-                maxlength="26"
-                required
               />
             </label>
-            <button class="box__form-btn" type="submit">Submit</button>
+            <label class="box__form-label">
+              <span class="box__form-icon">
+                <i class="fa-solid fa-lock"></i>
+                <label for="repassword">Confirm Password:</label>
+                <div
+                  class="box__form-underline box__form-underline--repassword"
+                ></div>
+              </span>
+              <input
+                name="repassword"
+                type="password"
+                id="repassword"
+                class="box__form-input"
+              />
+            </label>
+            <div class="box__btns">
+              <input class="box__btns-sub" type="submit" value="Sign up" />
+            </div>
           </form>
         </div>
       </div>

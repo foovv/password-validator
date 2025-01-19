@@ -16,23 +16,24 @@ const checkPassword = () => {
 
   if (lowPasswd.test(passwordValue) && passwordValue.length < 1) {
     p.classList.add('show')
-    p.style.color = 'red'
+    p.classList.add('bad')
     p.textContent = 'słabe hasło'
   } else if (mediumPasswd.test(passwordValue)) {
     p.classList.add('show')
-    p.style.color = 'yellow'
+    p.classList.add('medium')
     p.textContent = 'średnie hasło'
   } else if (goodPasswd.test(passwordValue)) {
     p.classList.add('show')
-    p.style.color = 'green'
+    p.classList.add('good')
     p.textContent = 'dobre hasło'
   } else {
     p.classList.add('show')
-    p.style.color = 'red'
+    p.classList.add('bad')
     p.textContent = 'podaj prawidłowe wartości!'
   }
 }
 
 btn.addEventListener('click', (e) => {
+  e.preventDefault()
   checkPassword()
 })
