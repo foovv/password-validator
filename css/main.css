@@ -9,7 +9,9 @@
 body {
   font-family: "Montserrat", serif;
   overflow: hidden;
-  background-color: black;
+  background: rgb(174, 180, 238);
+  background: radial-gradient(circle, rgb(174, 180, 238) 0%, rgb(148, 187, 233) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aeb4ee",endColorstr="#94bbe9",GradientType=1);
 }
 
 html {
@@ -41,6 +43,7 @@ h1 {
   padding: 1.5em;
 }
 .box__btns-sub {
+  border: none;
   font-size: 0.9em;
   font-weight: bold;
   text-transform: uppercase;
@@ -49,6 +52,10 @@ h1 {
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
+  background: rgb(174, 180, 238);
+  background: radial-gradient(circle, rgb(174, 180, 238) 0%, rgb(148, 187, 233) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aeb4ee",endColorstr="#94bbe9",GradientType=1);
+  transition: 0.3s background;
 }
 .box__text {
   padding: 1em;
@@ -77,7 +84,7 @@ h1 {
   margin-left: 1.2em;
   height: 1px;
   width: 30%;
-  background-color: rgb(63, 90, 81);
+  background-color: rgb(31, 147, 151);
 }
 .box__form-underline--password {
   width: 48%;
