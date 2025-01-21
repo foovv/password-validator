@@ -19,9 +19,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="box">
-        <div class="box__items">
-          <h1 class="box__title">Sign up</h1>
+      <div class="signup">
+        <div class="signup__items">
+          <h1 class="signup__title">Sign up</h1>
         </div>
         <div class="form">
           <p class="form__infopasswd"></p>
@@ -68,6 +68,58 @@
             </label>
             <div class="form__btns">
               <input class="form__btns-sub" type="submit" value="Sign up" />
+            </div>
+            <div>
+              <p class="form__text--signin">
+                Already have an account?
+                <a href="#" class="form__text--special">Sign in</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="signin">
+        <div class="signin__items">
+          <h1 class="signin__title">Sign in</h1>
+        </div>
+        <div class="form">
+          <p class="form__infopasswd"></p>
+          <form class="form__text">
+            <label class="form__label">
+              <span class="form__icon">
+                <i class="fa-solid fa-envelope"></i>
+                <label for="email">Email:</label>
+                <div class="form__underline"></div>
+              </span>
+              <input
+                name="email"
+                type="text"
+                id="email"
+                placeholder="example@gmail.com"
+                class="form__input"
+              />
+            </label>
+            <label class="form__label">
+              <span class="form__icon">
+                <i class="fa-solid fa-lock"></i>
+                <label for="password">Password:</label>
+                <div class="form__underline form__underline--password"></div>
+              </span>
+              <input
+                name="password"
+                type="password"
+                id="password"
+                class="form__input"
+              />
+            </label>
+            <div class="form__btns">
+              <input class="form__btns-sub" type="submit" value="Sign in" />
+            </div>
+            <div>
+              <p class="form__text--signin">
+                Don't have an account?
+                <a href="#" class="form__text--special">Sign up</a>
+              </p>
             </div>
           </form>
         </div>

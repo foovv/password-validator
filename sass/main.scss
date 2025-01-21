@@ -41,12 +41,13 @@ html {
   height: 100vh;
 }
 
-.box {
+.signup {
+  display: none;
   position: relative;
   background-color: rgba(75, 73, 73, 0.445);
   box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
   width: 350px;
-  height: 350px;
+  height: 400px;
   border-radius: 2%;
 
   &__title {
@@ -64,6 +65,19 @@ html {
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    &--special {
+      text-transform: uppercase;
+      display: flex;
+      text-decoration: none;
+      text-align: center;
+      flex-direction: column;
+      padding: 0.3em;
+      margin: auto 0;
+      &:hover {
+        color: #000000;
+      }
+    }
   }
 
   &__label {
@@ -119,6 +133,21 @@ html {
       cursor: pointer;
       background-color: rgba(148, 187, 233, 1);
     }
+  }
+}
+
+.signin {
+  position: relative;
+  background-color: rgba(75, 73, 73, 0.445);
+  box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
+  width: 350px;
+  height: 350px;
+  border-radius: 2%;
+
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1em;
   }
 }
 

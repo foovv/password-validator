@@ -1,39 +1,5 @@
-const password = document.querySelector('#password')
-const email = document.querySelector('#email')
-const p = document.querySelector('.box__form-infopasswd')
-const btn = document.querySelector('.box__form-btn')
+const signInForm = document.querySelector('.signin')
+const signUpForm = document.querySelector('.signup')
+const btnForm = document.querySelector('.form__text--special')
 
-// Wyrażenia regularne
-const lowPasswd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,9}$/ // 8+ znaków, 1 litera, 1 cyfra
-const mediumPasswd =
-  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,15}$/ // 10+ znaków, 1 litera, 1 cyfra, 1 znak specjalny
-const goodPasswd =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,25}$/ // 16+ znaków, 1 wielka litera, 1 cyfra, 1 znak specjalny
-
-const checkPassword = () => {
-  const passwordValue = password.value
-  p.textContent = ''
-
-  if (lowPasswd.test(passwordValue) && passwordValue.length < 1) {
-    p.classList.add('show')
-    p.classList.add('bad')
-    p.textContent = 'słabe hasło'
-  } else if (mediumPasswd.test(passwordValue)) {
-    p.classList.add('show')
-    p.classList.add('medium')
-    p.textContent = 'średnie hasło'
-  } else if (goodPasswd.test(passwordValue)) {
-    p.classList.add('show')
-    p.classList.add('good')
-    p.textContent = 'dobre hasło'
-  } else {
-    p.classList.add('show')
-    p.classList.add('bad')
-    p.textContent = 'podaj prawidłowe wartości!'
-  }
-}
-
-btn.addEventListener('click', (e) => {
-  e.preventDefault()
-  checkPassword()
-})
+const switchForm = () => {}
