@@ -27,24 +27,66 @@ html {
   height: 100vh;
 }
 
-h1 {
-  color: #fff;
-  text-transform: uppercase;
-}
-
 .box {
+  position: relative;
   background-color: rgba(75, 73, 73, 0.445);
   box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
   width: 350px;
   height: 350px;
   border-radius: 2%;
 }
-.box__btns {
-  padding: 1.5em;
+.box__title {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1em;
 }
-.box__btns-sub {
+
+.form {
+  font-size: 1.6rem;
+}
+.form__text {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form__label {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 0.3em;
+}
+.form__input {
+  margin: 0.3em 0;
+  width: 100%;
+}
+.form__underline {
+  position: absolute;
+  margin-left: 1.1em;
+  height: 1px;
+  width: 16%;
+  background-color: rgb(31, 147, 151);
+}
+.form__underline--password {
+  width: 24%;
+}
+.form__underline--repassword {
+  width: 44%;
+}
+.form__infopasswd {
+  padding: 0.1em;
+}
+.form__icon {
+  display: inline-block;
+  align-items: center;
+  gap: 5px;
+}
+.form__btns {
+  padding: 0.7em;
+}
+.form__btns-sub {
   border: none;
-  font-size: 0.9em;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
   flex-direction: column;
@@ -52,62 +94,12 @@ h1 {
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
-  background: rgb(174, 180, 238);
-  background: radial-gradient(circle, rgb(174, 180, 238) 0%, rgb(148, 187, 233) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aeb4ee",endColorstr="#94bbe9",GradientType=1);
-  transition: 0.3s background;
-}
-.box__text {
-  padding: 1em;
-}
-.box__form {
-  font-size: 1.6em;
-}
-.box__form-text {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.box__form-label {
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  padding: 0.3em;
-}
-.box__form-input {
-  margin: 0.3em 0;
-  width: 100%;
-}
-.box__form-underline {
-  position: relative;
-  margin-left: 1.2em;
-  height: 1px;
-  width: 30%;
-  background-color: rgb(31, 147, 151);
-}
-.box__form-underline--password {
-  width: 48%;
-}
-.box__form-underline--repassword {
-  width: 85%;
-}
-.box__form-infopasswd {
-  padding: 0.1em;
-}
-.box__form-icon {
-  display: inline-block;
-  align-items: center;
-  gap: 5px;
-}
-
-.show {
-  display: block;
+  background-color: rgb(148, 187, 233);
 }
 
 input {
   border: 1px solid black;
-  padding: 0.2em;
+  padding: 0.4em;
   border-radius: 6px;
 }
 
@@ -126,4 +118,8 @@ input {
 .fa-lock,
 .fa-envelope {
   color: #000000;
+}
+
+.show {
+  display: block;
 }/*# sourceMappingURL=main.css.map */
