@@ -42,7 +42,6 @@ html {
 }
 
 .signup {
-  display: none;
   position: relative;
   background-color: rgba(75, 73, 73, 0.445);
   box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
@@ -176,4 +175,8 @@ input {
 
 .show {
   display: block;
+}
+
+.hide {
+  display: none;
 }
