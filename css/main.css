@@ -29,20 +29,6 @@ html {
   overflow: hidden;
 }
 
-.signup {
-  position: absolute;
-  background-color: rgba(75, 73, 73, 0.445);
-  box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
-  width: 350px;
-  height: 400px;
-  border-radius: 2%;
-}
-.signup__title {
-  color: #fff;
-  text-transform: uppercase;
-  padding: 1em;
-}
-
 .form {
   font-size: 1.6rem;
 }
@@ -77,7 +63,7 @@ html {
 .form__underline {
   position: absolute;
   margin-left: 1.1em;
-  height: 1px;
+  height: 1.2px;
   width: 16%;
   background-color: rgb(31, 147, 151);
 }
@@ -111,18 +97,23 @@ html {
   background-color: rgb(148, 187, 233);
 }
 
+.signup,
 .signin {
   position: absolute;
   background-color: rgba(75, 73, 73, 0.445);
-  box-shadow: 0 2px 10px rgba(179, 179, 179, 0.2); /* Dodanie cienia */
   width: 350px;
-  height: 350px;
+  height: 400px;
   border-radius: 2%;
 }
+.signup__title,
 .signin__title {
   color: #fff;
   text-transform: uppercase;
   padding: 1em;
+}
+
+.signin {
+  height: 350px;
 }
 
 input {
