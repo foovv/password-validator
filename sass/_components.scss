@@ -2,7 +2,7 @@
   position: absolute;
   margin-left: 1.1em;
   height: 1px;
-  background-color: rgb(54, 174, 179);
+  background-color: rgb(100, 100, 163);
 
   &-email {
     margin-left: 1.2em;
@@ -17,6 +17,31 @@
   }
 }
 
-.btn-special-animation:hover {
-  background-color: beige;
+.btn-special-animation {
+  position: relative;
+  overflow: hidden;
+  background: rgb(100, 100, 163);
+  transition: all 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.5s ease;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    left: 0;
+  }
+
+  .btn-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
 }

@@ -11,29 +11,30 @@
 body {
   font-family: "Montserrat", serif;
   overflow: hidden;
-  background: rgb(174, 180, 238);
+  background: rgb(75, 75, 82);
   background: -moz-radial-gradient(
     circle,
-    rgba(174, 180, 238, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgba(75, 75, 82, 1) 0%,
+    rgba(23, 24, 25, 1) 100%
   );
   background: -webkit-radial-gradient(
     circle,
-    rgba(174, 180, 238, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgba(75, 75, 82, 1) 0%,
+    rgba(23, 24, 25, 1) 100%
   );
   background: radial-gradient(
     circle,
-    rgba(174, 180, 238, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgba(75, 75, 82, 1) 0%,
+    rgba(23, 24, 25, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aeb4ee",endColorstr="#94bbe9",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b4b52",endColorstr="#171819",GradientType=1);
 }
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
+
+/// FORM
 
 .container {
   position: relative;
@@ -55,15 +56,27 @@ html {
     flex-direction: column;
 
     &--special {
+      display: inline-block;
+      color: rgb(100, 100, 163);
       text-transform: uppercase;
-      display: flex;
       text-decoration: none;
-      text-align: center;
-      flex-direction: column;
-      padding: 0.3em;
-      margin: auto 0;
-      &:hover {
-        color: #000000;
+      position: relative;
+      padding: 0.3em 0;
+      transition: 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: rgb(100, 100, 163);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
       }
     }
   }
@@ -104,7 +117,7 @@ html {
 
     &-sub {
       border: none;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: bold;
       text-transform: uppercase;
       flex-direction: column;
@@ -112,7 +125,7 @@ html {
       height: 50px;
       border-radius: 5px;
       cursor: pointer;
-      background-color: rgba(148, 187, 233, 1);
+      background-color: rgb(100, 100, 163);
     }
   }
 }
@@ -120,10 +133,11 @@ html {
 .signup,
 .signin {
   position: absolute;
-  background-color: rgba(75, 73, 73, 0.445);
+  background-color: rgba(0, 0, 0, 0.445);
   width: 350px;
   height: 430px;
   border-radius: 2%;
+  overflow: hidden;
 
   &__title {
     color: #fff;
@@ -166,3 +180,5 @@ input {
 .hide {
   display: none;
 }
+
+/// ANIMATIONS

@@ -55,11 +55,11 @@
               />
             </label>
             <label class="form__label">
-              <span class="form__icon">
+              <div class="form__icon">
                 <i class="fa-solid fa-lock"></i>
                 <label for="repassword">Confirm Password:</label>
                 <div class="underline underline-repassword"></div>
-              </span>
+              </div>
               <input
                 name="repassword"
                 type="password"
@@ -69,16 +69,17 @@
               />
             </label>
             <div class="form__btns">
-              <input
-                class="form__btns-sub btn-special-animation"
+              <button
                 type="submit"
-                value="Sign up"
-              />
+                class="form__btns-sub btn-special-animation"
+              >
+                <span class="btn-text">Sign up</span>
+              </button>
             </div>
-            <div>
+            <div class="">
               <p class="form__text--signin">
                 Already have an account?
-                <a href="#" class="form__text--special">Sign in</a>
+                <a href="#" class="form__text--special">Login</a>
               </p>
             </div>
           </form>
@@ -86,7 +87,7 @@
       </div>
       <div class="signin show">
         <div class="signin__items">
-          <h1 class="signin__title">Sign in</h1>
+          <h1 class="signin__title">Login</h1>
         </div>
         <div class="form">
           <p class="form__infopasswd"></p>
@@ -120,11 +121,12 @@
               />
             </label>
             <div class="form__btns">
-              <input
-                class="form__btns-sub btn-special-animation"
+              <button
                 type="submit"
-                value="Sign in"
-              />
+                class="form__btns-sub btn-special-animation"
+              >
+                <span class="btn-text">Sign in</span>
+              </button>
             </div>
             <div>
               <p class="form__text--signin">
