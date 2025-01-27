@@ -1,4 +1,5 @@
 @import "./components";
+@import "./colors";
 
 *,
 *::before,
@@ -47,17 +48,17 @@ html {
 }
 
 .form {
+  color: $white;
   font-size: 1.6rem;
 
   &__text {
-    color: #fff;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     &--special {
       display: inline-block;
-      color: rgb(100, 100, 163);
+      color: $accent-color;
       text-transform: uppercase;
       text-decoration: none;
       position: relative;
@@ -71,7 +72,7 @@ html {
         bottom: 0;
         width: 0;
         height: 1px;
-        background-color: rgb(100, 100, 163);
+        background-color: $accent-color;
         transition: width 0.3s ease;
       }
 
@@ -125,7 +126,7 @@ html {
       height: 50px;
       border-radius: 5px;
       cursor: pointer;
-      background-color: rgb(100, 100, 163);
+      background-color: $accent-color;
     }
   }
 }

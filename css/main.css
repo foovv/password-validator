@@ -73,10 +73,10 @@ html {
 }
 
 .form {
+  color: rgb(230, 224, 224);
   font-size: 1.6rem;
 }
 .form__text {
-  color: #fff;
   display: flex;
   align-items: center;
   flex-direction: column;
