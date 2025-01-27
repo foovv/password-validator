@@ -78,8 +78,16 @@ html {
   padding: 0.3em;
 }
 .form__input {
-  margin: 0.3em 0;
+  color: #a3a1a1;
+  margin: 0.5em 0;
+  padding: 0.6em;
   width: 100%;
+  background-color: rgb(41, 40, 40);
+  transition: 0.3s;
+}
+.form__input:hover {
+  border-color: #fff;
+  border-width: 1px;
 }
 .form__infopasswd {
   padding: 0.1em;
@@ -110,7 +118,7 @@ html {
   position: absolute;
   background-color: rgba(75, 73, 73, 0.445);
   width: 350px;
-  height: 400px;
+  height: 430px;
   border-radius: 2%;
 }
 .signup__title,
