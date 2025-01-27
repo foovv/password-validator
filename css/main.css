@@ -1,3 +1,24 @@
+.underline {
+  position: absolute;
+  margin-left: 1.1em;
+  height: 1px;
+  background-color: rgb(54, 174, 179);
+}
+.underline-email {
+  margin-left: 1.2em;
+  width: 16%;
+}
+.underline-password {
+  width: 24%;
+}
+.underline-repassword {
+  width: 44%;
+}
+
+.btn-special-animation:hover {
+  background-color: beige;
+}
+
 *,
 *::before,
 *::after {
@@ -59,19 +80,6 @@ html {
 .form__input {
   margin: 0.3em 0;
   width: 100%;
-}
-.form__underline {
-  position: absolute;
-  margin-left: 1.1em;
-  height: 1.2px;
-  width: 16%;
-  background-color: rgb(31, 147, 151);
-}
-.form__underline--password {
-  width: 24%;
-}
-.form__underline--repassword {
-  width: 44%;
 }
 .form__infopasswd {
   padding: 0.1em;
