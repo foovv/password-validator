@@ -80,6 +80,8 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 .form__text--special {
   display: inline-block;
@@ -143,6 +145,10 @@ html {
   border-radius: 5px;
   cursor: pointer;
   background-color: rgb(100, 100, 163);
+}
+.form__error-info {
+  font-size: 1.3rem;
+  color: #ff4444;
 }
 
 .signup,

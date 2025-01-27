@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Walidator hasła</title>
+    <title>Password validator</title>
     <link rel="stylesheet" href="/css/main.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,6 @@
           <h1 class="signup__title">Sign up</h1>
         </div>
         <div class="form" action="signup" method="POST">
-          <p class="form__infopasswd"></p>
           <form class="form__text">
             <label class="form__label">
               <span class="form__icon">
@@ -39,6 +38,7 @@
                 placeholder="Example@gmail.com"
                 class="form__input"
               />
+              <p class="form__error-info"></p>
             </label>
             <label class="form__label">
               <span class="form__icon">
@@ -53,6 +53,7 @@
                 placeholder="Enter password"
                 class="form__input"
               />
+              <p class="form__error-info"></p>
             </label>
             <label class="form__label">
               <div class="form__icon">
@@ -67,6 +68,7 @@
                 placeholder="Repeat password"
                 class="form__input"
               />
+              <p class="form__error-info"></p>
             </label>
             <div class="form__btns">
               <button
@@ -90,7 +92,6 @@
           <h1 class="signin__title">Login</h1>
         </div>
         <div class="form">
-          <p class="form__infopasswd"></p>
           <form class="form__text">
             <label class="form__label">
               <span class="form__icon">
@@ -105,6 +106,7 @@
                 placeholder="Example@gmail.com"
                 class="form__input"
               />
+              <p class="form__error-info"></p>
             </label>
             <label class="form__label">
               <span class="form__icon">
@@ -119,6 +121,7 @@
                 placeholder="Enter password"
                 class="form__input"
               />
+              <p class="form__error-info"></p>
             </label>
             <div class="form__btns">
               <button
