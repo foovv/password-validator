@@ -1,0 +1,22 @@
+.underline {
+  position: absolute;
+  margin-left: 1.1em;
+  height: 1px;
+  background-color: rgb(54, 174, 179);
+
+  &-email {
+    margin-left: 1.2em;
+    width: 16%;
+  }
+  &-password {
+    width: 24%;
+  }
+
+  &-repassword {
+    width: 44%;
+  }
+}
+
+.btn-special-animation:hover {
+  background-color: beige;
+}
