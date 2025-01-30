@@ -90,7 +90,6 @@ html {
   text-decoration: none;
   position: relative;
   padding: 0.3em 0;
-  transition: 0.3s ease;
 }
 .form__text--special::after {
   content: "";
@@ -198,6 +197,7 @@ input {
 .show {
   opacity: 1;
   pointer-events: auto;
+  animation: changeForms 0.5s ease-out forwards;
 }
 
 .hide {
@@ -207,9 +207,11 @@ input {
 
 @keyframes changeForms {
   0% {
-    transform: scale(2);
+    transform: scale(0.8);
+    opacity: 0;
   }
   100% {
-    transform: scale(4);
+    transform: scale(1);
+    opacity: 1;
   }
 }/*# sourceMappingURL=main.css.map */
