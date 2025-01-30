@@ -2,7 +2,7 @@
   position: absolute;
   margin-left: 1.1em;
   height: 1px;
-  background-color: rgb(100, 100, 163);
+  background-color: $accent-color;
 
   &-email {
     margin-left: 1.2em;
@@ -20,7 +20,7 @@
 .btn-special-animation {
   position: relative;
   overflow: hidden;
-  background: rgb(100, 100, 163);
+  background: $accent-color;
   transition: all 0.3s;
 
   &::after {
