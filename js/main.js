@@ -1,6 +1,7 @@
 const signInForm = document.querySelector('.signin')
 const signUpForm = document.querySelector('.signup')
 const toggleLinks = document.querySelectorAll('.form__text--special')
+const errorMess = document.querySelector('.form__error-info')
 
 const changesForm = () => {
   signInForm.classList.toggle('show')
