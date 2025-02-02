@@ -145,12 +145,6 @@ html {
   cursor: pointer;
   background-color: rgb(100, 100, 163);
 }
-.form__error {
-  font-size: 1.2rem;
-}
-.form__error-passwd {
-  font-size: 1.2rem;
-}
 
 .signup,
 .signin {
@@ -205,6 +199,10 @@ input {
 .hide {
   opacity: 0;
   pointer-events: none;
+}
+
+.error-password-singin {
+  font-size: 1.2rem;
 }
 
 @keyframes changeForms {

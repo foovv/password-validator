@@ -130,13 +130,6 @@ html {
       background-color: $accent-color;
     }
   }
-
-  &__error {
-    font-size: 1.2rem;
-    &-passwd {
-      font-size: 1.2rem;
-    }
-  }
 }
 
 .signup,
@@ -194,6 +187,9 @@ input {
   pointer-events: none;
 }
 
+.error-password-singin {
+  font-size: 1.2rem;
+}
 /// ANIMATIONS
 
 @keyframes changeForms {
