@@ -6,9 +6,9 @@ const errorMessPasswd = document.querySelector('.form__error-passwd')
 const inputPasswd = document.querySelector('.input-password')
 const inputEmail = document.querySelector('.input-email')
 const inputRePasswd = document.querySelector('.input-repassword')
-const MAX_LENGHT = 26
+const MAX_LENGTH = 26
 const MID_LENGTH = 15
-const MIN_LENGHT = 7
+const MIN_LENGTH = 7
 
 const changesForm = () => {
   signInForm.classList.toggle('show')
@@ -21,19 +21,19 @@ toggleLinks.forEach((link) => {
   link.addEventListener('click', changesForm)
 })
 
-const checkLenght = () => {
-  const passwdLenght = inputPasswd.value.length
+const checkLength = () => {
+  const passwdLength = inputPasswd.value.length
   textContent = ''
 
-  if (passwdLenght === 0 || passwdLenght < MIN_LENGHT) {
+  if (passwdLength === 0 || passwdLenght < MIN_LENGTH) {
     errorMessPasswd.classList.remove('medium')
     errorMessPasswd.textContent = 'Masz słabe hasło!'
     errorMessPasswd.classList.add('bad')
-  } else if (passwdLenght <= MIN_LENGHT || passwdLenght < MID_LENGTH) {
+  } else if (passwdLength <= MIN_LENGTH || passwdLenght < MID_LENGTH) {
     errorMessPasswd.classList.remove('good')
     errorMessPasswd.textContent = 'Masz średnie hasło!'
     errorMessPasswd.classList.add('medium')
-  } else if (passwdLenght <= MID_LENGTH || passwdLenght <= MAX_LENGHT) {
+  } else if (passwdLength <= MID_LENGTH || passwdLenght <= MAX_LENGTH) {
     errorMessPasswd.classList.remove('medium')
     errorMessPasswd.textContent = 'Masz dobre hasło!'
     errorMessPasswd.classList.add('good')
@@ -44,4 +44,4 @@ const checkLenght = () => {
   }
 }
 
-inputPasswd.addEventListener('input', checkLenght)
+inputPasswd.addEventListener('input', checkLength)
