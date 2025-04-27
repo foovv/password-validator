@@ -57,6 +57,11 @@ const checkLengthSingin = e => {
 		errorPasswdSingup.classList.remove('bad')
 		errorPasswdSingin.textContent = 'Masz dobre hasło!'
 		errorPasswdSingin.classList.add('good')
+	} else if (passwdLength > MAX_LENGTH) {
+		errorPasswdSingin.classList.remove('medium')
+		errorPasswdSingin.classList.remove('good')
+		errorPasswdSingin.textContent = 'Hasło posiada za dużo znaków'
+		errorPasswdSingin.classList.add('bad')
 	}
 }
 
@@ -84,6 +89,11 @@ const checkLenghtSingup = e => {
 		errorPasswdSingup.classList.remove('bad')
 		errorPasswdSingup.textContent = 'Masz dobre hasło!'
 		errorPasswdSingup.classList.add('good')
+	} else if (passwdLength > MAX_LENGTH) {
+		errorPasswdSingup.classList.remove('medium')
+		errorPasswdSingup.classList.remove('good')
+		errorPasswdSingup.textContent = 'Hasło posiada za dużo znaków'
+		errorPasswdSingup.classList.add('bad')
 	}
 }
 
