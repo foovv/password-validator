@@ -96,7 +96,7 @@ const checkMatchPasswd = e => {
 		errorRePasswdSingup.classList.add('bad')
 		errorRePasswdSingup.classList.remove('good')
 	} else if (passwd === repasswd) {
-		errorRePasswdSingup.textContent = 'Hasłą są zgodne'
+		errorRePasswdSingup.textContent = 'Hasła są zgodne'
 		errorRePasswdSingup.classList.remove('bad')
 		errorRePasswdSingup.classList.add('good')
 	} else {
