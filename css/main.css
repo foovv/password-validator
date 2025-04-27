@@ -213,6 +213,10 @@ input {
   font-size: 1.2rem;
 }
 
+.error-email {
+  font-size: 1.2rem;
+}
+
 @keyframes changeForms {
   0% {
     transform: scale(0.1);

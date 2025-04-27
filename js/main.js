@@ -8,16 +8,16 @@ const input = document.querySelector('.form__input')
 const errorPasswdSingup = document.querySelector('.error-password-singup')
 const errorPasswdSingin = document.querySelector('.error-password-singin')
 const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
+const errorEmail = document.querySelector('.error-email')
 
 /// inputs
 
 const inputPasswds = document.querySelectorAll('.input-password')
+const inputEmail = document.querySelector('.input-email')
 const inputPasswd = [...inputPasswds]
 const firstInput = inputPasswd[0]
 const secondInput = inputPasswd[1]
 const thirdInput = inputPasswd[2]
-const inputEmail = document.querySelector('.input-email')
-const inputRePasswd = document.querySelector('.input-repassword')
 
 /// LENGHTS
 
@@ -116,11 +116,25 @@ const checkMatchPasswd = e => {
 	}
 }
 
+const checkEmail = e => {
+	const emailTarget = e.target
+	const emailLength = emailTarget.value.length
+
+	if (emailLength === 0) {
+		errorEmail.textContent = 'Wprowadź prawidłowe dane'
+		errorEmail.classList.add('bad')
+		errorEmail.classList.remove('good')
+	} else if (inputEmail.value === '@') {
+		errorEmail.textContent = ''
+	}
+}
+
 /// LISTENER
 
 firstInput.addEventListener('input', checkLenghtSingup)
 secondInput.addEventListener('input', checkMatchPasswd)
 thirdInput.addEventListener('input', checkLengthSingin)
+inputEmail.addEventListener('input', checkEmail)
 
 toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
