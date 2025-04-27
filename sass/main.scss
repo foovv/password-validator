@@ -79,7 +79,7 @@ html {
 	}
 
 	&__input {
-		color: #a3a1a1;
+		color: $grey;
 		margin: 0.5em 0;
 		padding: 0.6em;
 		width: 100%;
@@ -87,7 +87,7 @@ html {
 		transition: 0.3s;
 
 		&:hover {
-			border-color: #fff;
+			border-color: $white;
 			border-width: 1px;
 		}
 	}
@@ -131,7 +131,7 @@ html {
 	overflow: hidden;
 
 	&__title {
-		color: #fff;
+		color: $white;
 		text-transform: uppercase;
 		padding: 1em;
 	}
@@ -142,26 +142,26 @@ html {
 }
 
 input {
-	border: 1px solid black;
+	border: 1px solid $black;
 	padding: 0.4em;
 	border-radius: 6px;
 }
 
 .bad {
-	color: red;
+	color: $red;
 }
 
 .medium {
-	color: yellow;
+	color: $yellow;
 }
 
 .good {
-	color: green;
+	color: $green;
 }
 
 .fa-lock,
 .fa-envelope {
-	color: #000000;
+	color: $black;
 }
 
 .show {
@@ -207,9 +207,4 @@ input {
 		transform: scale(1);
 		opacity: 1;
 	}
-}
-
-/// BREAKPOINTS
-
-@media (min-width: 992px) {
 }
