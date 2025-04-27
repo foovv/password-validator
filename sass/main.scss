@@ -1,211 +1,204 @@
-@import "./components";
-@import "./colors";
+@import './components';
+@import './colors';
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", serif;
-  overflow: hidden;
-  background: rgb(75, 75, 82);
-  background: -moz-radial-gradient(
-    circle,
-    rgba(75, 75, 82, 1) 0%,
-    rgba(23, 24, 25, 1) 100%
-  );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(75, 75, 82, 1) 0%,
-    rgba(23, 24, 25, 1) 100%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(75, 75, 82, 1) 0%,
-    rgba(23, 24, 25, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b4b52",endColorstr="#171819",GradientType=1);
+	font-family: 'Montserrat', serif;
+	overflow: hidden;
+	background: rgb(75, 75, 82);
+	background: -moz-radial-gradient(circle, rgba(75, 75, 82, 1) 0%, rgba(23, 24, 25, 1) 100%);
+	background: -webkit-radial-gradient(circle, rgba(75, 75, 82, 1) 0%, rgba(23, 24, 25, 1) 100%);
+	background: radial-gradient(circle, rgba(75, 75, 82, 1) 0%, rgba(23, 24, 25, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b4b52",endColorstr="#171819",GradientType=1);
 }
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 /// FORM
 
 .container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
 }
 
 .form {
-  color: $white;
-  font-size: 1.6rem;
+	color: $white;
+	font-size: 1.6rem;
 
-  &__text {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
+	&__text {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		position: relative;
 
-    &--special {
-      display: inline-block;
-      color: $accent-color;
-      text-transform: uppercase;
-      text-decoration: none;
-      position: relative;
-      padding: 0.3em 0;
+		&--special {
+			display: inline-block;
+			color: $accent-color;
+			text-transform: uppercase;
+			text-decoration: none;
+			position: relative;
+			padding: 0.3em 0;
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        background-color: $accent-color;
-        transition: width 0.3s ease;
-      }
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 0;
+				height: 1px;
+				background-color: $accent-color;
+				transition: width 0.3s ease;
+			}
 
-      &:hover::after {
-        width: 100%;
-      }
-    }
-  }
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
 
-  &__label {
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    padding: 0.3em;
-  }
+	&__label {
+		display: flex;
+		text-align: left;
+		flex-direction: column;
+		padding: 0.3em;
+	}
 
-  &__input {
-    color: #a3a1a1;
-    margin: 0.5em 0;
-    padding: 0.6em;
-    width: 100%;
-    background-color: rgb(41, 40, 40);
-    transition: 0.3s;
+	&__input {
+		color: #a3a1a1;
+		margin: 0.5em 0;
+		padding: 0.6em;
+		width: 100%;
+		background-color: rgb(41, 40, 40);
+		transition: 0.3s;
 
-    &:hover {
-      border-color: #fff;
-      border-width: 1px;
-    }
-  }
+		&:hover {
+			border-color: #fff;
+			border-width: 1px;
+		}
+	}
 
-  &__infopasswd {
-    padding: 0.1em;
-  }
+	&__infopasswd {
+		padding: 0.1em;
+	}
 
-  &__icon {
-    display: inline-block;
-    align-items: center;
-    gap: 5px;
-  }
+	&__icon {
+		display: inline-block;
+		align-items: center;
+		gap: 5px;
+	}
 
-  &__btns {
-    padding: 0.7em;
+	&__btns {
+		padding: 0.7em;
 
-    &-sub {
-      border: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      flex-direction: column;
-      width: 180px;
-      height: 50px;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: $accent-color;
-    }
-  }
+		&-sub {
+			border: none;
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			flex-direction: column;
+			width: 180px;
+			height: 50px;
+			border-radius: 5px;
+			cursor: pointer;
+			background-color: $accent-color;
+		}
+	}
 }
 
 .signup,
 .signin {
-  display: block;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.445);
-  width: 350px;
-  height: 430px;
-  border-radius: 3%;
-  overflow: hidden;
+	display: block;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.445);
+	width: 350px;
+	height: 430px;
+	border-radius: 3%;
+	overflow: hidden;
 
-  &__title {
-    color: #fff;
-    text-transform: uppercase;
-    padding: 1em;
-  }
+	&__title {
+		color: #fff;
+		text-transform: uppercase;
+		padding: 1em;
+	}
 }
 
 .signin {
-  height: 350px;
+	height: 350px;
 }
 
 input {
-  border: 1px solid black;
-  padding: 0.4em;
-  border-radius: 6px;
+	border: 1px solid black;
+	padding: 0.4em;
+	border-radius: 6px;
 }
 
 .bad {
-  color: red;
+	color: red;
 }
 
 .medium {
-  color: yellow;
+	color: yellow;
 }
 
 .good {
-  color: green;
+	color: green;
 }
 
 .fa-lock,
 .fa-envelope {
-  color: #000000;
+	color: #000000;
 }
 
 .show {
-  opacity: 1;
-  pointer-events: auto;
-  animation: changeForms 0.7s ease-in-out forwards;
+	opacity: 1;
+	pointer-events: auto;
+	animation: changeForms 0.7s ease-in-out forwards;
 }
 
 .hide {
-  opacity: 0;
-  pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .error-password-singin {
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 }
+
+.error-password-singup {
+	font-size: 1.2rem;
+}
+
 /// ANIMATIONS
 
 @keyframes changeForms {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  5% {
-    transform: scale(0.2);
-    opacity: 0.1;
-  }
+	0% {
+		transform: scale(0.1);
+		opacity: 0;
+	}
+	5% {
+		transform: scale(0.2);
+		opacity: 0.1;
+	}
 
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 /// BREAKPOINTS

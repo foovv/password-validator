@@ -10,6 +10,9 @@ const firstInput = inputPasswd[0]
 const secondInput = inputPasswd[1]
 const inputEmail = document.querySelector('.input-email')
 const inputRePasswd = document.querySelector('.input-repassword')
+
+/// LENGHTS
+
 const MAX_LENGTH = 26
 const MID_LENGTH = 15
 const MIN_LENGTH = 7
@@ -23,42 +26,67 @@ const changesForm = () => {
 	signUpForm.classList.toggle('hide')
 }
 
-const getInputPasswd = () => {}
-
-const checkLength = e => {
+const checkLengthSingin = e => {
 	const passwdTarget = e.target
 	const passwdLength = passwdTarget.value.length
-
-	if (passwdLength === 0 || passwdLength < MIN_LENGTH) {
+	if (passwdLength === 0) {
+		errorPasswdSingin.classList.remove('medium')
+		errorPasswdSingin.classList.remove('good')
+		errorPasswdSingin.textContent = 'Wprowadź prawidłowe dane'
+		errorPasswdSingin.classList.add('bad')
+	} else if (passwdLength < MIN_LENGTH) {
 		errorPasswdSingin.classList.remove('good')
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingin.textContent = 'Masz słabe hasło!'
 		errorPasswdSingin.classList.add('bad')
 	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH) {
 		errorPasswdSingin.classList.remove('good')
+		errorPasswdSingup.classList.remove('bad')
 		errorPasswdSingin.textContent = 'Masz średnie hasło!'
 		errorPasswdSingin.classList.add('medium')
 	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH) {
 		errorPasswdSingin.classList.remove('medium')
+		errorPasswdSingup.classList.remove('bad')
 		errorPasswdSingin.textContent = 'Masz dobre hasło!'
 		errorPasswdSingin.classList.add('good')
-	} else {
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.textContent = 'Wprowadz prawidłowe dane'
-		errorPasswdSingin.classList.add('bad')
 	}
-	console.log(passwdTarget.name)
+}
+
+const checkLenghtSingup = e => {
+	const passwdTarget = e.target
+	const passwdLength = passwdTarget.value.length
+
+	if (passwdLength === 0) {
+		errorPasswdSingup.classList.remove('medium')
+		errorPasswdSingup.classList.remove('good')
+		errorPasswdSingup.textContent = 'Wprowadź prawidłowe dane'
+		errorPasswdSingup.classList.add('bad')
+	} else if (passwdLength < MIN_LENGTH) {
+		errorPasswdSingup.classList.remove('good')
+		errorPasswdSingup.classList.remove('medium')
+		errorPasswdSingup.textContent = 'Masz słabe hasło!'
+		errorPasswdSingup.classList.add('bad')
+	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH) {
+		errorPasswdSingup.classList.remove('good')
+		errorPasswdSingup.classList.remove('bad')
+		errorPasswdSingup.textContent = 'Masz średnie hasło!'
+		errorPasswdSingup.classList.add('medium')
+	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH) {
+		errorPasswdSingup.classList.remove('medium')
+		errorPasswdSingup.classList.remove('bad')
+		errorPasswdSingup.textContent = 'Masz dobre hasło!'
+		errorPasswdSingup.classList.add('good')
+	}
 }
 
 /// LISTENER
 
-secondInput.addEventListener('input', checkLength)
+firstInput.addEventListener('input', checkLenghtSingup)
+secondInput.addEventListener('input', checkLengthSingin)
+
 toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
 
 console.log(firstInput)
-console.log(inputPasswd)
-
-console.log(errorPasswdSingin)
+console.log(secondInput)
