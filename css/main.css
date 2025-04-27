@@ -209,6 +209,10 @@ input {
   font-size: 1.2rem;
 }
 
+.error-repassword-singup {
+  font-size: 1.2rem;
+}
+
 @keyframes changeForms {
   0% {
     transform: scale(0.1);

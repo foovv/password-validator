@@ -2,12 +2,20 @@ const signInForm = document.querySelector('.signin')
 const signUpForm = document.querySelector('.signup')
 const toggleLinks = document.querySelectorAll('.form__text--special')
 const input = document.querySelector('.form__input')
+
+/// error messages
+
 const errorPasswdSingup = document.querySelector('.error-password-singup')
 const errorPasswdSingin = document.querySelector('.error-password-singin')
+const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
+
+/// inputs
+
 const inputPasswds = document.querySelectorAll('.input-password')
 const inputPasswd = [...inputPasswds]
 const firstInput = inputPasswd[0]
 const secondInput = inputPasswd[1]
+const thirdInput = inputPasswd[2]
 const inputEmail = document.querySelector('.input-email')
 const inputRePasswd = document.querySelector('.input-repassword')
 
@@ -79,14 +87,31 @@ const checkLenghtSingup = e => {
 	}
 }
 
+const checkMatchPasswd = e => {
+	const passwd = firstInput.value
+	const repasswd = secondInput.value
+
+	if (repasswd === '') {
+		errorRePasswdSingup.textContent = 'Powtórz hasło'
+		errorRePasswdSingup.classList.add('bad')
+		errorRePasswdSingup.classList.remove('good')
+	} else if (passwd === repasswd) {
+		errorRePasswdSingup.textContent = 'Hasłą są zgodne'
+		errorRePasswdSingup.classList.remove('bad')
+		errorRePasswdSingup.classList.add('good')
+	} else {
+		errorRePasswdSingup.textContent = 'Hasła się różnią'
+		errorRePasswdSingup.classList.add('bad')
+		errorRePasswdSingup.classList.remove('good')
+	}
+}
+
 /// LISTENER
 
 firstInput.addEventListener('input', checkLenghtSingup)
-secondInput.addEventListener('input', checkLengthSingin)
+secondInput.addEventListener('input', checkMatchPasswd)
+thirdInput.addEventListener('input', checkLengthSingin)
 
 toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
-
-console.log(firstInput)
-console.log(secondInput)
