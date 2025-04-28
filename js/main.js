@@ -8,7 +8,8 @@ const input = document.querySelector('.form__input')
 const errorPasswdSingup = document.querySelector('.error-password-singup')
 const errorPasswdSingin = document.querySelector('.error-password-singin')
 const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
-const errorEmail = document.querySelector('.error-email')
+const inputEmails = document.querySelectorAll('.input-email')
+const errorEmails = document.querySelectorAll('.error-email')
 
 /// inputs
 
@@ -116,16 +117,21 @@ const checkMatchPasswd = e => {
 	}
 }
 
-const checkEmail = e => {
+const checkEmail = (e, errorElement) => {
 	const emailTarget = e.target
-	const emailLength = emailTarget.value.length
+	const emailValue = emailTarget.value
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-	if (emailLength === 0) {
-		errorEmail.textContent = 'Wprowadź prawidłowe dane'
-		errorEmail.classList.add('bad')
-		errorEmail.classList.remove('good')
-	} else if (inputEmail.value === '@') {
-		errorEmail.textContent = ''
+	if (emailValue === '') {
+		errorElement.textContent = 'Wprowadź prawidłowe dane'
+		errorElement.classList.add('bad')
+		errorElement.classList.remove('good')
+	} else if (!emailRegex.test(emailValue)) {
+		errorElement.textContent = 'Nieprawidłowy format email'
+		errorElement.classList.add('bad')
+		errorElement.classList.remove('good')
+	} else {
+		errorElement.textContent = ''
 	}
 }
 
@@ -134,8 +140,16 @@ const checkEmail = e => {
 firstInput.addEventListener('input', checkLenghtSingup)
 secondInput.addEventListener('input', checkMatchPasswd)
 thirdInput.addEventListener('input', checkLengthSingin)
-inputEmail.addEventListener('input', checkEmail)
+
+inputEmails.forEach((emailInput, index) => {
+	emailInput.addEventListener('input', e => {
+		const errorElement = errorEmails[index] // Wybierz odpowiedni element błędu
+		checkEmail(e, errorElement)
+	})
+})
 
 toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
+
+checkFormHeight()
