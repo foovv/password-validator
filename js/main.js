@@ -23,6 +23,7 @@ const thirdInput = inputPasswd[2]
 
 /// PASSWORDS REQUIREMENTS
 
+const passwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]+$/
 const MAX_LENGTH = 26
 const MID_LENGTH = 15
 const MIN_LENGTH = 7
@@ -39,30 +40,32 @@ const changesForm = () => {
 const checkLengthSingin = e => {
 	const passwdTarget = e.target
 	const passwdLength = passwdTarget.value.length
+	const passwdValue = passwdTarget.value
+
 	if (passwdLength === 0) {
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.textContent = 'Wprowadź prawidłowe dane'
+		errorPasswdSingin.textContent = 'Enter valid data'
 		errorPasswdSingin.classList.add('bad')
-	} else if (passwdLength < MIN_LENGTH) {
+	} else if (passwdLength < MIN_LENGTH && !passwdRegex.test(passwdValue)) {
 		errorPasswdSingin.classList.remove('good')
 		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.textContent = 'Masz słabe hasło!'
+		errorPasswdSingin.textContent = 'Your password is weak'
 		errorPasswdSingin.classList.add('bad')
-	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH) {
+	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH && passwdRegex.test(passwdValue)) {
 		errorPasswdSingin.classList.remove('good')
 		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingin.textContent = 'Masz średnie hasło!'
+		errorPasswdSingin.textContent = 'Your password is medium'
 		errorPasswdSingin.classList.add('medium')
-	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH) {
+	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH && passwdRegex.test(passwdValue)) {
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingin.textContent = 'Masz dobre hasło!'
+		errorPasswdSingin.textContent = 'Your password is strong'
 		errorPasswdSingin.classList.add('good')
 	} else if (passwdLength > MAX_LENGTH) {
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.textContent = 'Hasło posiada za dużo znaków'
+		errorPasswdSingin.textContent = 'Your password is too long'
 		errorPasswdSingin.classList.add('bad')
 	}
 }
@@ -70,31 +73,32 @@ const checkLengthSingin = e => {
 const checkLenghtSingup = e => {
 	const passwdTarget = e.target
 	const passwdLength = passwdTarget.value.length
+	const passwdValue = passwdTarget.value
 
 	if (passwdLength === 0) {
 		errorPasswdSingup.classList.remove('medium')
 		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.textContent = 'Wprowadź prawidłowe dane'
+		errorPasswdSingup.textContent = 'Enter valid data'
 		errorPasswdSingup.classList.add('bad')
-	} else if (passwdLength < MIN_LENGTH) {
+	} else if (passwdLength < MIN_LENGTH && !passwdRegex.test(passwdValue)) {
 		errorPasswdSingup.classList.remove('good')
 		errorPasswdSingup.classList.remove('medium')
-		errorPasswdSingup.textContent = 'Masz słabe hasło!'
+		errorPasswdSingup.textContent = 'Your password is to weak'
 		errorPasswdSingup.classList.add('bad')
-	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH) {
+	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH && passwdRegex.test(passwdValue)) {
 		errorPasswdSingup.classList.remove('good')
 		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingup.textContent = 'Masz średnie hasło!'
+		errorPasswdSingup.textContent = 'Your password is medium'
 		errorPasswdSingup.classList.add('medium')
-	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH) {
+	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH && passwdRegex.test(passwdValue)) {
 		errorPasswdSingup.classList.remove('medium')
 		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingup.textContent = 'Masz dobre hasło!'
+		errorPasswdSingup.textContent = 'Your password is strong'
 		errorPasswdSingup.classList.add('good')
 	} else if (passwdLength > MAX_LENGTH) {
 		errorPasswdSingup.classList.remove('medium')
 		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.textContent = 'Hasło posiada za dużo znaków'
+		errorPasswdSingup.textContent = 'Your password is too long'
 		errorPasswdSingup.classList.add('bad')
 	}
 }
@@ -104,15 +108,15 @@ const checkMatchPasswd = e => {
 	const repasswd = secondInput.value
 
 	if (repasswd === '') {
-		errorRePasswdSingup.textContent = 'Powtórz hasło'
+		errorRePasswdSingup.textContent = 'Repeat password'
 		errorRePasswdSingup.classList.add('bad')
 		errorRePasswdSingup.classList.remove('good')
 	} else if (passwd === repasswd) {
-		errorRePasswdSingup.textContent = 'Hasła są zgodne'
+		errorRePasswdSingup.textContent = 'Passwords dont match'
 		errorRePasswdSingup.classList.remove('bad')
 		errorRePasswdSingup.classList.add('good')
 	} else {
-		errorRePasswdSingup.textContent = 'Hasła się różnią'
+		errorRePasswdSingup.textContent = 'The passwords do not match'
 		errorRePasswdSingup.classList.add('bad')
 		errorRePasswdSingup.classList.remove('good')
 	}
@@ -124,11 +128,11 @@ const checkEmail = (e, errorElement) => {
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 	if (emailValue === '') {
-		errorElement.textContent = 'Wprowadź prawidłowe dane'
+		errorElement.textContent = 'Enter valid data'
 		errorElement.classList.add('bad')
 		errorElement.classList.remove('good')
 	} else if (!emailRegex.test(emailValue)) {
-		errorElement.textContent = 'Nieprawidłowy format email'
+		errorElement.textContent = 'Invalid email format'
 		errorElement.classList.add('bad')
 		errorElement.classList.remove('good')
 	} else {
@@ -145,7 +149,7 @@ const checkCorrectPasswd = e => {
 	if (passwd === correctPasswd) {
 		window.location.href = '/html/main.html'
 	} else {
-		errorPasswdSingin.textContent = 'Nieprawidłowe hasło'
+		errorPasswdSingin.textContent = 'Incorrect password'
 		errorPasswdSingin.classList.add('bad')
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingin.classList.remove('good')
