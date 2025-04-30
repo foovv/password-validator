@@ -145,7 +145,7 @@ const checkCorrectPasswd = e => {
 	if (passwd === correctPasswd) {
 		window.location.href = '/html/main.html'
 	} else {
-		errorPasswdSingin.textContent = 'złe hasło'
+		errorPasswdSingin.textContent = 'Nieprawidłowe hasło'
 		errorPasswdSingin.classList.add('bad')
 		errorPasswdSingin.classList.remove('medium')
 		errorPasswdSingin.classList.remove('good')
