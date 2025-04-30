@@ -21,7 +21,7 @@ const firstInput = inputPasswd[0]
 const secondInput = inputPasswd[1]
 const thirdInput = inputPasswd[2]
 
-/// LENGHTS
+/// PASSWORDS REQUIREMENTS
 
 const MAX_LENGTH = 26
 const MID_LENGTH = 15
