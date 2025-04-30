@@ -10,6 +10,7 @@ const errorPasswdSingin = document.querySelector('.error-password-singin')
 const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
 const inputEmails = document.querySelectorAll('.input-email')
 const errorEmails = document.querySelectorAll('.error-email')
+const loginBtn = document.querySelector('.signin-btn')
 
 /// inputs
 
@@ -135,6 +136,22 @@ const checkEmail = (e, errorElement) => {
 	}
 }
 
+const checkCorrectPasswd = e => {
+	e.preventDefault()
+
+	const correctPasswd = 'danio123'
+	const passwd = thirdInput.value
+
+	if (passwd === correctPasswd) {
+		window.location.href = '/html/main.html'
+	} else {
+		errorPasswdSingin.textContent = 'złe hasło'
+		errorPasswdSingin.classList.add('bad')
+		errorPasswdSingin.classList.remove('medium')
+		errorPasswdSingin.classList.remove('good')
+	}
+}
+
 /// LISTENER
 
 firstInput.addEventListener('input', checkLenghtSingup)
@@ -152,4 +169,4 @@ toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
 
-checkFormHeight()
+loginBtn.addEventListener('click', checkCorrectPasswd)
