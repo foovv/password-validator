@@ -8,14 +8,15 @@ const input = document.querySelector('.form__input')
 const errorPasswdSingup = document.querySelector('.error-password-singup')
 const errorPasswdSingin = document.querySelector('.error-password-singin')
 const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
-const inputEmails = document.querySelectorAll('.input-email')
 const errorEmails = document.querySelectorAll('.error-email')
 const loginBtn = document.querySelector('.signin-btn')
 
 /// inputs
 
 const inputPasswds = document.querySelectorAll('.input-password')
-const inputEmail = document.querySelector('.input-email')
+const inputEmails = document.querySelectorAll('.input-email')
+const inputEmail = [...inputEmails]
+
 const inputPasswd = [...inputPasswds]
 const firstInput = inputPasswd[0]
 const secondInput = inputPasswd[1]
@@ -112,7 +113,7 @@ const checkMatchPasswd = e => {
 		errorRePasswdSingup.classList.add('bad')
 		errorRePasswdSingup.classList.remove('good')
 	} else if (passwd === repasswd) {
-		errorRePasswdSingup.textContent = 'Passwords dont match'
+		errorRePasswdSingup.textContent = 'Passwords match'
 		errorRePasswdSingup.classList.remove('bad')
 		errorRePasswdSingup.classList.add('good')
 	} else {
@@ -140,13 +141,15 @@ const checkEmail = (e, errorElement) => {
 	}
 }
 
-const checkCorrectPasswd = e => {
+const checkCorrectLogin = e => {
 	e.preventDefault()
 
 	const correctPasswd = 'danio123'
+	const correctMail = 'fovcode@proton.me'
 	const passwd = thirdInput.value
+	const mail = inputEmail.value
 
-	if (passwd === correctPasswd) {
+	if (passwd === correctPasswd && mail === correctMail) {
 		window.location.href = '/html/main.html'
 	} else {
 		errorPasswdSingin.textContent = 'Incorrect password'
@@ -173,4 +176,4 @@ toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
 
-loginBtn.addEventListener('click', checkCorrectPasswd)
+loginBtn.addEventListener('click', checkCorrectLogin)
