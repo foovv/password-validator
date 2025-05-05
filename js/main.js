@@ -144,6 +144,7 @@ const checkEmail = (e, errorElement) => {
 const checkCorrectLogin = e => {
 	e.preventDefault()
 
+	// test data
 	const correctPasswd = 'danio123'
 	const correctMail = 'fovcode@proton.me'
 	const passwd = thirdInput.value

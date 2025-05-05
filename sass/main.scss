@@ -147,54 +147,6 @@ input {
 	border-radius: 6px;
 }
 
-.bad {
-	color: $red;
-}
-
-.medium {
-	color: $yellow;
-}
-
-.good {
-	color: $green;
-}
-
-.fa-lock,
-.fa-envelope {
-	color: $black;
-}
-
-.show {
-	opacity: 1;
-	pointer-events: auto;
-	animation: changeForms 0.7s ease-in-out forwards;
-}
-
-.hide {
-	opacity: 0;
-	pointer-events: none;
-}
-
-.error-password-singin {
-	font-weight: 800;
-	font-size: 1.2rem;
-}
-
-.error-password-singup {
-	font-weight: 800;
-	font-size: 1.2rem;
-}
-
-.error-repassword-singup {
-	font-weight: 800;
-	font-size: 1.2rem;
-}
-
-.error-email {
-	font-weight: 800;
-	font-size: 1.2rem;
-}
-
 /// ANIMATIONS
 
 @keyframes changeForms {
