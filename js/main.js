@@ -1,35 +1,33 @@
+/// else
 const signInForm = document.querySelector('.signin')
 const signUpForm = document.querySelector('.signup')
 const toggleLinks = document.querySelectorAll('.form__text--special')
-const input = document.querySelector('.form__input')
 
 /// error messages
-
-const errorPasswdSingup = document.querySelector('.error-password-singup')
-const errorPasswdSingin = document.querySelector('.error-password-singin')
-const errorRePasswdSingup = document.querySelector('.error-repassword-singup')
+const errorPassSignUp = document.querySelector('.error-password-singup')
+const errorRePassSignUp = document.querySelector('.error-repassword-singup')
+const errorPassSignIn = document.querySelector('.error-password-singin')
 const errorEmails = document.querySelectorAll('.error-email')
 const loginBtn = document.querySelector('.signin-btn')
 
-/// inputs
-
-const inputPasswds = document.querySelectorAll('.input-password')
+/// inputs email
 const inputEmails = document.querySelectorAll('.input-email')
 const inputEmail = [...inputEmails]
 
+// inputs passwords
+const inputPasswds = document.querySelectorAll('.input-password')
 const inputPasswd = [...inputPasswds]
-const firstInput = inputPasswd[0]
-const secondInput = inputPasswd[1]
-const thirdInput = inputPasswd[2]
+const inputPassSignUp = inputPasswd[0]
+const inputRePassSignUp = inputPasswd[1]
+const inputPassSignIn = inputPasswd[2]
 
-/// PASSWORDS REQUIREMENTS
-
+/// passwords requirements
 const passwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]+$/
 const MAX_LENGTH = 26
 const MID_LENGTH = 15
 const MIN_LENGTH = 7
 
-/// FUNCTIONS
+/// functions
 
 const changesForm = () => {
 	signInForm.classList.toggle('show')
@@ -38,69 +36,27 @@ const changesForm = () => {
 	signUpForm.classList.toggle('hide')
 }
 
-const checkLengthSingin = e => {
-	const passwdTarget = e.target
-	const passwdLength = passwdTarget.value.length
-	const passwdValue = passwdTarget.value
+const checkPasswdStrenght = (e, errorElement) => {
+	passwdValue = e.target.value
+	passwdLength = passwdValue.length
+
+	errorElement.classList.remove('bad', 'medium', 'good')
 
 	if (passwdLength === 0) {
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.textContent = 'Enter valid data'
-		errorPasswdSingin.classList.add('bad')
-	} else if (passwdLength < MIN_LENGTH && !passwdRegex.test(passwdValue)) {
-		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.textContent = 'Your password is weak'
-		errorPasswdSingin.classList.add('bad')
-	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH && passwdRegex.test(passwdValue)) {
-		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingin.textContent = 'Your password is medium'
-		errorPasswdSingin.classList.add('medium')
-	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH && passwdRegex.test(passwdValue)) {
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingin.textContent = 'Your password is strong'
-		errorPasswdSingin.classList.add('good')
+		errorElement.textContent = 'Enter valid data'
+		errorElement.classList.add('bad')
+	} else if (passwdLength < MIN_LENGTH || !passwdRegex.test(passwdValue)) {
+		errorElement.textContent = 'Your password is weak'
+		errorElement.classList.add('bad')
+	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH) {
+		errorElement.textContent = 'Your password is medium'
+		errorElement.classList.add('medium')
+	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH) {
+		errorElement.textContent = 'Your password is strong'
+		errorElement.classList.add('good')
 	} else if (passwdLength > MAX_LENGTH) {
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.classList.remove('good')
-		errorPasswdSingin.textContent = 'Your password is too long'
-		errorPasswdSingin.classList.add('bad')
-	}
-}
-
-const checkLenghtSingup = e => {
-	const passwdTarget = e.target
-	const passwdLength = passwdTarget.value.length
-	const passwdValue = passwdTarget.value
-
-	if (passwdLength === 0) {
-		errorPasswdSingup.classList.remove('medium')
-		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.textContent = 'Enter valid data'
-		errorPasswdSingup.classList.add('bad')
-	} else if (passwdLength < MIN_LENGTH && !passwdRegex.test(passwdValue)) {
-		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.classList.remove('medium')
-		errorPasswdSingup.textContent = 'Your password is to weak'
-		errorPasswdSingup.classList.add('bad')
-	} else if (passwdLength >= MIN_LENGTH && passwdLength < MID_LENGTH && passwdRegex.test(passwdValue)) {
-		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingup.textContent = 'Your password is medium'
-		errorPasswdSingup.classList.add('medium')
-	} else if (passwdLength >= MID_LENGTH && passwdLength <= MAX_LENGTH && passwdRegex.test(passwdValue)) {
-		errorPasswdSingup.classList.remove('medium')
-		errorPasswdSingup.classList.remove('bad')
-		errorPasswdSingup.textContent = 'Your password is strong'
-		errorPasswdSingup.classList.add('good')
-	} else if (passwdLength > MAX_LENGTH) {
-		errorPasswdSingup.classList.remove('medium')
-		errorPasswdSingup.classList.remove('good')
-		errorPasswdSingup.textContent = 'Your password is too long'
-		errorPasswdSingup.classList.add('bad')
+		errorElement.textContent = 'Your password is too long'
+		errorElement.classList.add('bad')
 	}
 }
 
@@ -109,17 +65,17 @@ const checkMatchPasswd = e => {
 	const repasswd = secondInput.value
 
 	if (repasswd === '') {
-		errorRePasswdSingup.textContent = 'Repeat password'
-		errorRePasswdSingup.classList.add('bad')
-		errorRePasswdSingup.classList.remove('good')
+		errorRePassSignUp.textContent = 'Repeat password'
+		errorRePassSignUp.classList.add('bad')
+		errorRePassSignUp.classList.remove('good')
 	} else if (passwd === repasswd) {
-		errorRePasswdSingup.textContent = 'Passwords match'
-		errorRePasswdSingup.classList.remove('bad')
-		errorRePasswdSingup.classList.add('good')
+		errorRePassSignUp.textContent = 'Passwords match'
+		errorRePassSignUp.classList.remove('bad')
+		errorRePassSignUp.classList.add('good')
 	} else {
-		errorRePasswdSingup.textContent = 'The passwords do not match'
-		errorRePasswdSingup.classList.add('bad')
-		errorRePasswdSingup.classList.remove('good')
+		errorRePassSignUp.textContent = 'The passwords do not match'
+		errorRePassSignUp.classList.add('bad')
+		errorRePassSignUp.classList.remove('good')
 	}
 }
 
@@ -141,30 +97,32 @@ const checkEmail = (e, errorElement) => {
 	}
 }
 
-const checkCorrectLogin = e => {
+const checkCorrectLogin = (e, index) => {
 	e.preventDefault()
 
 	// test data
+
 	const correctPasswd = 'danio123'
 	const correctMail = 'fovcode@proton.me'
 	const passwd = thirdInput.value
-	const mail = inputEmail.value
+	const mail = inputEmails[0].value
 
 	if (passwd === correctPasswd && mail === correctMail) {
 		window.location.href = '/html/main.html'
-	} else {
-		errorPasswdSingin.textContent = 'Incorrect password'
-		errorPasswdSingin.classList.add('bad')
-		errorPasswdSingin.classList.remove('medium')
-		errorPasswdSingin.classList.remove('good')
+	} else if (passwd !== correctPasswd) {
+		errorPassSignIn.textContent = 'Incorrect password'
+		errorPassSignIn.classList.add('bad')
+		errorPassSignIn.classList.remove('medium')
+		errorPassSignIn.classList.remove('good')
+	} else if (mail !== correctMail) {
 	}
 }
 
 /// LISTENER
 
-firstInput.addEventListener('input', checkLenghtSingup)
-secondInput.addEventListener('input', checkMatchPasswd)
-thirdInput.addEventListener('input', checkLengthSingin)
+inputPassSignUp.addEventListener('input', e => checkPasswdStrenght(e, errorPassSignUp))
+inputRePassSignUp.addEventListener('input', checkMatchPasswd)
+inputPassSignIn.addEventListener('input', e => checkPasswdStrenght(e, errorPassSignIn))
 
 inputEmails.forEach((emailInput, index) => {
 	emailInput.addEventListener('input', e => {
