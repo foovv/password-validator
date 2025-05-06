@@ -84,37 +84,41 @@ const checkEmail = (e, errorElement) => {
 	const emailValue = emailTarget.value
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+	errorElement.classList.remove('bad', 'medium', 'good')
+
 	if (emailValue === '') {
 		errorElement.textContent = 'Enter valid data'
 		errorElement.classList.add('bad')
-		errorElement.classList.remove('good')
 	} else if (!emailRegex.test(emailValue)) {
 		errorElement.textContent = 'Invalid email format'
 		errorElement.classList.add('bad')
-		errorElement.classList.remove('good')
 	} else {
 		errorElement.textContent = ''
 	}
 }
 
-const checkCorrectLogin = (e, index) => {
+const checkCorrectLogin = e => {
 	e.preventDefault()
-
 	// test data
 
 	const correctPasswd = 'danio123'
 	const correctMail = 'fovcode@proton.me'
-	const passwd = thirdInput.value
+	const passwd = inputPassSignIn.value
 	const mail = inputEmails[0].value
+
+	errorPassSignIn.textContent = ''
+	errorPassSignIn.classList.remove('bad', 'medium', 'good')
+	errorEmails[0].textContent = ''
+	errorEmails[0].classList.remove('bad')
 
 	if (passwd === correctPasswd && mail === correctMail) {
 		window.location.href = '/html/main.html'
 	} else if (passwd !== correctPasswd) {
 		errorPassSignIn.textContent = 'Incorrect password'
 		errorPassSignIn.classList.add('bad')
-		errorPassSignIn.classList.remove('medium')
-		errorPassSignIn.classList.remove('good')
 	} else if (mail !== correctMail) {
+		errorEmails[0].textContent = 'Incorrect email'
+		errorEmails[0].classList.add('bad')
 	}
 }
 
@@ -135,4 +139,4 @@ toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
 
-loginBtn.addEventListener('click', checkCorrectLogin)
+loginBtn.addEventListener('submit', checkCorrectLogin)
