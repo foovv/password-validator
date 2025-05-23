@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Password validator</title>
+		<link rel="stylesheet" href="/css/main.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Password validator</title>
-  <link rel="stylesheet" href="/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/0af599df42.js" crossorigin="anonymous"></script>
+	</head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IN:wght@100..400&display=swap"
-    rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/0af599df42.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <div class="container">
-    <div class="signup hide">
-      <div class="signup__items">
-        <h1 class="signup__title">Sign up</h1>
-      </div>
-      <div class="form">
-        <form class="form__text">
-          <label class="form__label">
-            <span class="form__icon">
-              <i class="fa-solid fa-envelope"></i>
-              <label for="email">Email:</label>
-              <div class="underline underline-email"></div>
-            </span>
-            <input name="signup-email" type="text" id="signup-email" placeholder="Example@gmail.com"
-              class="form__input input-email" />
-            <p class="error-email"></p>
-          </label>
-          <label class="form__label">
-            <span class="form__icon">
-              <i class="fa-solid fa-lock"></i>
-              <label for="password">Password:</label>
-              <div class="underline underline-password"></div>
-            </span>
-            <input name="signup-password" type="password" id="signup-password" placeholder="Enter password"
-              class="form__input input-password" />
-            <p class="error-password-singup"></p>
-          </label>
-          <label class="form__label">
-            <div class="form__icon">
-              <i class="fa-solid fa-lock"></i>
-              <label for="repassword">Confirm Password:</label>
-              <div class="underline underline-repassword"></div>
-            </div>
-            <input name="repassword" type="password" id="repassword" placeholder="Repeat password"
-              class="form__input input-password" />
-            <p class="error-repassword-singup"></p>
-          </label>
-          <div class="form__btns">
-            <button type="submit" class="form__btns-sub btn-special-animation singup-btn">
-              <span class="btn-text">Sign up</span>
-            </button>
-          </div>
-          <div class="">
-            <p class="form__text--signin">
-              Already have an account?
-              <a href="#" class="form__text--special">Login</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="signin show">
-      <div class="signin__items">
-        <h1 class="signin__title">Login</h1>
-      </div>
-      <div class="form">
-        <form class="form__text">
-          <label class="form__label">
-            <span class="form__icon">
-              <i class="fa-solid fa-envelope"></i>
-              <label for="email">Email:</label>
-              <div class="underline underline-email"></div>
-            </span>
-            <input name="signin-email" type="text" id="signin-email" placeholder="Example@gmail.com"
-              class="form__input input-email" />
-            <p class="error-email"></p>
-          </label>
-          <label class="form__label">
-            <span class="form__icon">
-              <i class="fa-solid fa-lock"></i>
-              <label for="password">Password:</label>
-              <div class="underline underline-password"></div>
-            </span>
-            <input name="signin-password" type="password" id="signin-password" placeholder="Enter password"
-              class="form__input input-password" />
-            <p class="error-password-singin"></p>
-          </label>
-          <div class="form__btns">
-            <button type="submit" class="form__btns-sub btn-special-animation signin-btn">
-              <span class="btn-text">Sign in</span>
-            </button>
-          </div>
-          <div>
-            <p class="form__text--signin">
-              Don't have an account?
-              <a href="#" class="form__text--special">Sign up</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <script src="/js/main.js"></script>
-</body>
-
+	<body>
+		<div class="container">
+			<div class="signup hide">
+				<div class="signup__items">
+					<h1 class="signup__title">Sign up</h1>
+				</div>
+				<div class="form">
+					<form class="form__text">
+						<label class="form__label">
+							<span class="form__icon">
+								<i class="fa-solid fa-envelope"></i>
+								<label for="email">Email:</label>
+								<div class="underline underline-email"></div>
+							</span>
+							<input name="signup-email" type="text" id="signup-email" placeholder="Example@gmail.com" class="form__input input-email" />
+							<p class="error-email"></p>
+						</label>
+						<label class="form__label">
+							<span class="form__icon">
+								<i class="fa-solid fa-lock"></i>
+								<label for="password">Password:</label>
+								<div class="underline underline-password"></div>
+							</span>
+							<input name="signup-password" type="password" id="signup-password" placeholder="Enter password" class="form__input input-password" />
+							<p class="error-password-singup"></p>
+						</label>
+						<label class="form__label">
+							<div class="form__icon">
+								<i class="fa-solid fa-lock"></i>
+								<label for="repassword">Confirm Password:</label>
+								<div class="underline underline-repassword"></div>
+							</div>
+							<input name="repassword" type="password" id="repassword" placeholder="Repeat password" class="form__input input-password" />
+							<p class="error-repassword-singup"></p>
+						</label>
+						<div class="form__btns">
+							<button type="submit" class="form__btns-sub btn-special-animation singup-btn">
+								<span class="btn-text">Sign up</span>
+							</button>
+						</div>
+						<div class="">
+							<p class="form__text--signin">
+								Already have an account?
+								<a href="#" class="form__text--special">Login</a>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="signin show">
+				<div class="signin__items">
+					<h1 class="signin__title">Login</h1>
+				</div>
+				<div class="form">
+					<form class="form__text">
+						<label class="form__label">
+							<span class="form__icon">
+								<i class="fa-solid fa-envelope"></i>
+								<label for="email">Email:</label>
+								<div class="underline underline-email"></div>
+							</span>
+							<input name="signin-email" type="text" id="signin-email" placeholder="Example@gmail.com" class="form__input input-email" />
+							<p class="error-email"></p>
+						</label>
+						<label class="form__label">
+							<span class="form__icon">
+								<i class="fa-solid fa-lock"></i>
+								<label for="password">Password:</label>
+								<div class="underline underline-password"></div>
+							</span>
+							<input name="signin-password" type="password" id="signin-password" placeholder="Enter password" class="form__input input-password" />
+							<p class="error-password-singin"></p>
+						</label>
+						<div class="form__btns">
+							<button type="submit" class="form__btns-sub btn-special-animation signin-btn">
+								<span class="btn-text">Sign in</span>
+							</button>
+						</div>
+						<div>
+							<p class="form__text--signin">
+								Don't have an account?
+								<a href="#" class="form__text--special">Sign up</a>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="/js/main.js"></script>
+	</body>
 </html>

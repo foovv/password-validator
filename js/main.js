@@ -99,17 +99,16 @@ const checkEmail = (e, errorElement) => {
 
 const checkCorrectLogin = e => {
 	e.preventDefault()
-	// test data
 
 	const correctPasswd = 'danio123'
 	const correctMail = 'fovcode@proton.me'
 	const passwd = inputPassSignIn.value
-	const mail = inputEmails[0].value
+	const mail = inputEmails[1].value
 
 	errorPassSignIn.textContent = ''
 	errorPassSignIn.classList.remove('bad', 'medium', 'good')
-	errorEmails[0].textContent = ''
-	errorEmails[0].classList.remove('bad')
+	errorEmails[1].textContent = ''
+	errorEmails[1].classList.remove('bad')
 
 	if (passwd === correctPasswd && mail === correctMail) {
 		window.location.href = '/html/main.html'
@@ -117,8 +116,8 @@ const checkCorrectLogin = e => {
 		errorPassSignIn.textContent = 'Incorrect password'
 		errorPassSignIn.classList.add('bad')
 	} else if (mail !== correctMail) {
-		errorEmails[0].textContent = 'Incorrect email'
-		errorEmails[0].classList.add('bad')
+		errorEmails[1].textContent = 'Incorrect email'
+		errorEmails[1].classList.add('bad')
 	}
 }
 
@@ -130,7 +129,7 @@ inputPassSignIn.addEventListener('input', e => checkPasswdStrenght(e, errorPassS
 
 inputEmails.forEach((emailInput, index) => {
 	emailInput.addEventListener('input', e => {
-		const errorElement = errorEmails[index] // Wybierz odpowiedni element błędu
+		const errorElement = errorEmails[index]
 		checkEmail(e, errorElement)
 	})
 })
@@ -139,4 +138,4 @@ toggleLinks.forEach(link => {
 	link.addEventListener('click', changesForm)
 })
 
-loginBtn.addEventListener('submit', checkCorrectLogin)
+loginBtn.addEventListener('click', checkCorrectLogin)
